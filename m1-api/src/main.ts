@@ -1,13 +1,18 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { config } from 'dotenv';
+import { ValidationPipe } from '@nestjs/common';
 
 config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3001);
-  console.log(`API running on port ${process.env.PORT ?? 3001}`);
+  app.useGlobalPipes(new ValidationPipe());
+  app.enableCors();
+  app.setGlobalPrefix('api');
+  await app.listen(process.env.PORT);
+
+  console.log(`🚀 API listening on PORT ${process.env.PORT}`);
 }
 
 bootstrap();
