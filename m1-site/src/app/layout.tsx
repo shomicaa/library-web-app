@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import { AuthProvider } from "../context/AuthContext";
+import ClientLayout from "../components/ClientLayout";
 
 export const metadata = {
   title: "Book Manager",
@@ -13,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-50 min-h-screen flex flex-col">
-        {children}
+        <AuthProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </AuthProvider>
       </body>
     </html>
   );
