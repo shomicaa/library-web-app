@@ -8,13 +8,13 @@ export type RatingModel = {
     bookId: string;
     book?: BookModel;
   };
-
+  
   export type CreateRatingModel = {
     stars: number;
     comment?: string;
     bookId: string;
   };
-
+  
   export type UpdateRatingModel = {
     stars?: number;
     comment?: string;

@@ -60,7 +60,7 @@ export class RatingService {
     id: string,
     input: UpdateRatingModel,
   ): Promise<RatingModel> {
-    // Validate that the book exists
+    // Validate that the book exists 
     if (bookId) {
       const book = await this.bookRepository.getBook(bookId);
       if (!book) {
@@ -76,8 +76,8 @@ export class RatingService {
 
     // Update the rating and update the average rating after
     // Here we also need to adress the edge case where we change the review to belong to another book
-    const oldRating = await this.ratingRepository.getRatingById(id);
-    const updatedRating = await this.ratingRepository.updateRating(id, input);
+    const oldRating = await this.ratingRepository.getRatingById(id); 
+    const updatedRating = await this.ratingRepository.updateRating(id, input); 
 
     // Recalculate averageRating for the old book (if the bookId changed)
     if (oldRating.bookId !== updatedRating.bookId) {
@@ -95,7 +95,7 @@ export class RatingService {
     if (!book) {
       throw new NotFoundException(`Book with ID ${bookId} not found`);
     }
-
+    
     // Delete the rating and update the average rating after
     const rating = await this.ratingRepository.getRatingById(id);
     const result = await this.ratingRepository.deleteRating(id);
@@ -108,12 +108,12 @@ export class RatingService {
   // Here we implemented a method to update the average rating of a book and the author
 
   public async updateAverageRating(bookId: string): Promise<void> {
-    const ratings = await this.ratingRepository.getRatings(bookId);
+    const ratings = await this.ratingRepository.getRatings(bookId); 
     const totalRatings = ratings.reduce((sum, rating) => sum + rating.stars, 0);
     const averageRating = ratings.length > 0 ? totalRatings / ratings.length : 0;
-
+  
     await this.bookRepository.updateBook(bookId, { averageRating });
-
+    
     // Update the author's average rating
     const book = await this.bookRepository.getBook(bookId); // Use existing method
     if (book.authorId) {

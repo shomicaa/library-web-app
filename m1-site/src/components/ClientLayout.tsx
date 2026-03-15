@@ -124,7 +124,7 @@ export default function ClientLayout({
       <main className="container mx-auto px-6 py-8 flex-grow">{children}</main>
       <footer className="bg-white shadow mt-8">
         <div className="container mx-auto px-6 py-4 text-center text-gray-600">
-          <p>&copy; 2025 Book Manager. All rights reserved.</p>
+          <p>&copy; 2026 Book Manager. All rights reserved.</p>
         </div>
       </footer>
     </>

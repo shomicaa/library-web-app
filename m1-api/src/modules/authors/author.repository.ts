@@ -20,7 +20,7 @@ export class AuthorRepository {
   ): Promise<AuthorModel[]> {
     // Same thing as for the book repository
     const query = this.authorRepository.createQueryBuilder('author');
-
+  
     if (search) {
       query.where('author.name LIKE :search', { search: `%${search}%` });
     }

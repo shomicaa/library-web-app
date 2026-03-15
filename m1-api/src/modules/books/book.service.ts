@@ -37,7 +37,7 @@ export class BookService {
   }
 
   public async createBook(input: CreateBookModel): Promise<BookModel> {
-    const book = await this.bookRepository.createBook(input);
+    const book = await this.bookRepository.createBook(input); 
     // Update numberOfBooksWritten for the author
     if (book.authorId) {
       await this.authorService.updateNumberOfBooksWritten(book.authorId);

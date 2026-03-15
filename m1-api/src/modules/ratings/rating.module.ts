@@ -8,7 +8,7 @@ import { BookModule } from '../books/book.module';
 import { AuthorModule } from '../authors/author.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([RatingEntity]), BookModule, AuthorModule],
+  imports: [TypeOrmModule.forFeature([RatingEntity]), BookModule, AuthorModule], 
   controllers: [RatingController],
   providers: [RatingService, RatingRepository],
 })

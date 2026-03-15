@@ -77,7 +77,7 @@ export class AuthorService {
     );
     const averageRating = booksWithReviews.length > 0 ? totalRatings / booksWithReviews.length : 0;
 
-    await this.authorRepository.updateAuthor(authorId, { averageRating });
+    await this.authorRepository.updateAuthor(authorId, { averageRating }); 
   }
 
   // This method calculates the number of books written by an author.

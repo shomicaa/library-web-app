@@ -21,7 +21,7 @@ export class RatingRepository {
     if (sortBy) {
       query.orderBy(`rating.${sortBy}`, sortOrder);
     }
-
+  
     return query.getMany();
   }
 

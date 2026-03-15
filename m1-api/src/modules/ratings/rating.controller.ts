@@ -38,7 +38,7 @@ export class RatingController {
   ): Promise<RatingModel> {
     const createRatingModel: CreateRatingModel = {
       ...input,
-      bookId: bookId as BookId,
+      bookId: bookId as BookId, 
     };
     return this.ratingService.addRating(createRatingModel);
   }

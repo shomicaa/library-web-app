@@ -46,7 +46,7 @@ export const useRatings = () => {
     setError(null);
     try {
       await api.delete(`books/${bookId}/ratings/${ratingId}`);
-      setRatings((prevRatings) => prevRatings.filter((rating) => rating.id !== ratingId));
+      setRatings((prevRatings) => prevRatings.filter((rating) => rating.id !== ratingId)); 
     } catch (error) {
       setError("Failed to delete rating.");
       console.error(error);
@@ -55,5 +55,5 @@ export const useRatings = () => {
     }
   }, []);
 
-  return { ratings, loading, error, fetchRatings, addRating, deleteRating };
+  return { ratings, loading, error, fetchRatings, addRating, deleteRating }; 
 };
