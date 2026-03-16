@@ -7,7 +7,7 @@ import { Breadcrumbs } from "./ui/BreadCrumbs";
 
 const PUBLIC_PATHS = ["/login", "/register", "/register-admin"];
 const ADMIN_ONLY_PATHS = ["/users"];
-const USER_ONLY_PATHS = ["/books", "/authors"];
+const USER_ONLY_PATHS = ["/", "/books", "/authors"];
 
 export default function ClientLayout({
   children,
