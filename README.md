@@ -94,13 +94,6 @@ A full-stack book management system for libraries, built with **NestJS** (backen
 - **Clean code structure** (separated components, services, models)
 - **Git best practices** (meaningful commits, branch management)
 
-## 📅 Future Improvements
-
-- User authentication (librarian vs. visitor roles)
-- Book borrowing/return system
-- Advanced filtering (by genre, rating, etc.)
-- Dark mode & accessibility enhancements
-
 ---
 
 Feel free to explore the code and contribute! 🚀
